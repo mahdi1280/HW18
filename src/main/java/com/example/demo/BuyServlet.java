@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "BuyServlet", value = "/buy")
 public class BuyServlet extends HttpServlet {
@@ -23,7 +24,11 @@ public class BuyServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        int personId=Integer.parseInt(request.getParameter("personId"));
+        Person person=personService.findById(personId);
+        List<Reserve> byPerson = reserveService.findByPerson(person);
+        request.setAttribute("reserves",byPerson);
+        request.getRequestDispatcher("/listBuy.jsp").forward(request, response);
     }
 
     @Override

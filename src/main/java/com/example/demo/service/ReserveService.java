@@ -1,7 +1,10 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Person;
 import com.example.demo.model.Reserve;
 import com.example.demo.repository.ReserveRepository;
+
+import java.util.List;
 
 public class ReserveService {
 
@@ -12,4 +15,7 @@ public class ReserveService {
     }
 
 
+    public List<Reserve> findByPerson(Person person) {
+        return reserveRepository.findByPerson(person);
+    }
 }

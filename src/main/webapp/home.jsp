@@ -41,7 +41,7 @@
     <input type="hidden" value="${requestScope.person.id}" name="personId">
     <input type="submit">
 </form>
-<a href="buy">مشاهده خرید های من</a>
+<a href="buy?personId=${requestScope.person.id}">مشاهده خرید های من</a>
 <table class="table">
     <tr>
         <th>شناسه اتوبوس</th>
