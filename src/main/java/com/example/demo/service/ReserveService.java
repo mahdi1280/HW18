@@ -18,4 +18,8 @@ public class ReserveService {
     public List<Reserve> findByPerson(Person person) {
         return reserveRepository.findByPerson(person);
     }
+
+    public void delete(int reserveId) {
+        reserveRepository.delete(reserveId);
+    }
 }

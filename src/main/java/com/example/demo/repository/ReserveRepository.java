@@ -22,4 +22,12 @@ public class ReserveRepository {
                 .setParameter("person",person)
                 .getResultList();
     }
+
+    public void delete(int reserveId) {
+        Session session = MySessionFactory.openSession();
+        Reserve reserve = session.find(Reserve.class, reserveId);
+        session.beginTransaction();
+        session.delete(reserve);
+        session.getTransaction().commit();
+    }
 }

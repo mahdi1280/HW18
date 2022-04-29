@@ -26,7 +26,7 @@
     </style>
 </head>
 <body>
-<form class="form">
+<form action="buyDelete" method="post" class="form">
     <table>
         <tr>
             <th>شناسه</th>
@@ -36,17 +36,25 @@
             <th>مقصد</th>
             <th>سایر</th>
         </tr>
-    <c:forEach items="${requestScope.reserves}" var="reserv">
+    <c:forEach items="${requestScope.reserves}" var="reserve">
         <tr>
-            <td>${reserv.id}</td>
-            <td>${reserv.ticket.localDate}</td>
-            <td>${reserv.ticket.time}</td>
-            <td>${reserv.ticket.source}</td>
-            <td>${reserv.ticket.dest}</td>
-            <td><a href="">لغو</a></td>
+            <td>${reserve.id}</td>
+            <td>${reserve.ticket.localDate}</td>
+            <td>${reserve.ticket.time}</td>
+            <td>${reserve.ticket.source}</td>
+            <td>${reserve.ticket.dest}</td>
+            <td><input onclick="reserve()" type="submit" value="لغو"></td>
+            <input type="hidden" value="${reserve.id}" name="reserveId">
+            <input type="hidden" value="${reserve.person.id}" name="personId">
         </tr>
     </c:forEach>
     </table>
+
 </form>
+<script>
+    function reserve() {
+        alert("حذف با موفقیت انجام شد.");
+    }
+</script>
 </body>
 </html>

@@ -11,8 +11,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/login")
-public class HelloServlet extends HttpServlet {
+@WebServlet(name = "homeServlet", value = "/login")
+public class HomeServlet extends HttpServlet {
 
     private PersonService personService=new PersonService();
 
