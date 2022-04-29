@@ -30,23 +30,28 @@
             text-align: center;
             width: 80%;
         }
+        .a{
+            margin: auto;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-
+<div class="container-fluid">
 <form class="form" method="get" action="search">
-    <label>مبدا</label>
-    <input required type="text" name="source">
-    <label>مقصد</label>
-    <input required type="text" name="dest">
-    <label>تاریخ</label>
-    <input required type="text" name="date">
+    <label class="input-group-text">مبدا</label>
+    <input class="form-control" required type="text" name="source">
+    <label class="input-group-text">مقصد</label>
+    <input class="form-control" required type="text" name="dest">
+    <label class="input-group-text">تاریخ</label>
+    <input class="form-control" required type="text" name="date">
     <input type="hidden" value="${requestScope.person.id}" name="personId">
-    <input type="submit">
+    <input type="submit" class="btn btn-primary">
 </form>
-<a href="buy?personId=${requestScope.person.id}">مشاهده خرید های من</a>
-<table class="table">
-    <tr>
+    <a  class="btn btn-info d-flex justify-content-center" href="buy?personId=${requestScope.person.id}">مشاهده خرید های من</a>
+
+    <table class="table table-striped table-dark">
+    <tr class="thead-dark">
         <th>شناسه اتوبوس</th>
         <th>مبدا</th>
         <th>مقصد</th>
@@ -61,13 +66,10 @@
             <td>${ticket.dest}</td>
             <td>${ticket.localDate}</td>
             <td>${ticket.time}</td>
-            <td><a href="gender?personId=${requestScope.person.id}&ticketId=${ticket.id}">خرید</a></td>
+            <td><a class="btn btn-success" href="gender?personId=${requestScope.person.id}&ticketId=${ticket.id}">خرید</a></td>
         </tr>
     </c:forEach>
 </table>
-<%--<c:out value="${requestScope.person.id}"/>--%>
-<%--<c:out value="${requestScope.person.username}"/>--%>
-<%--<c:out value="${requestScope.person.password}"/>--%>
-<%--<c:out value="${requestScope.person.version}"/>--%>
+</div>
 </body>
 </html>

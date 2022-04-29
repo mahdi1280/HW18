@@ -7,44 +7,35 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
     <style>
-        .form{
-            border-radius: 4px;
+        body{
             direction: rtl;
-            text-align: center;
-            margin: auto;
-            height: 40px;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            align-content: stretch;
         }
     </style>
 </head>
 <body>
-    <form class="form" action="buy" method="post">
-        <table>
-            <tr>
-                <c:out value="${requestScope.person.username}"/>
-            </tr>
-            <tr>
+    <form class="form-horizontal" action="buy" method="post">
+        <table class="table table-striped table-dark">
+            <div>
+                <td>نام کاربری:</td>
+                <td><c:out value="${requestScope.person.username}"/></td>
+            </div>
+            <div>
                 <td>
-                    <label>مرد</label>
-                    <input type="radio" checked name="gender" value="آقا">
+                    <labe>مرد</labe>
+                    <input class="form-check-input" type="radio" checked name="gender" value="آقا">
 
                 </td>
                 <td>
                     <label>زن</label>
-                    <input type="radio" name="gender" value="خانم">
+                    <input class="form-check-input" type="radio" name="gender" value="خانم">
 
                 </td>
-            </tr>
-            <tr>
+            </div>
+            <div class="form-group">
                 <input type="hidden" name="ticketId" value="${requestScope.ticket.id}">
                 <input type="hidden" name="personId" value="${requestScope.person.id}">
-                <td><input type="submit"></td>
-            </tr>
+                <td><input class="btn btn-success" type="submit" value="خرید"></td>
+            </div>
         </table>
     </form>
 </body>

@@ -29,9 +29,9 @@
     </style>
 </head>
 <body>
+<table class="table table-striped table-dark">
 <form action="buyDelete" method="post" class="form">
-    <table>
-        <tr>
+        <tr  class="thead-dark">
             <th>شناسه</th>
             <th>تاریخ</th>
             <th>ساعت</th>
@@ -51,9 +51,10 @@
             <input type="hidden" value="${reserve.person.id}" name="personId">
         </tr>
     </c:forEach>
-    </table>
+
 
 </form>
+</table>
 <script>
     function reserve() {
         alert("حذف با موفقیت انجام شد.");
