@@ -7,7 +7,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "helloServlet", value = "/login")
 public class HelloServlet extends HttpServlet {
     private String message;
 
@@ -29,6 +29,12 @@ public class HelloServlet extends HttpServlet {
 //        out.println("<html><body>");
 //        out.println("<h1>" + message + "</h1>");
 //        out.println("</body></html>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username=req.getParameter("username");
+
     }
 
     public void destroy() {
