@@ -10,6 +10,19 @@ public class Reserve extends BaseEntity{
     private Ticket ticket;
     private String gender;
 
+    public Reserve(Person person, Ticket ticket, String gender) {
+        this.person = person;
+        this.ticket = ticket;
+        this.gender = gender;
+    }
+
+    public Reserve() {
+    }
+
+    public static Builder builder(){
+        return new Builder();
+    }
+
     @ManyToOne
     public Person getPerson() {
         return person;
@@ -37,5 +50,33 @@ public class Reserve extends BaseEntity{
     public Reserve setGender(String gender) {
         this.gender = gender;
         return this;
+    }
+
+    public static class Builder {
+
+        private Person person;
+        private Ticket ticket;
+        private String gender;
+
+        private Builder(){}
+
+        public Builder person(Person person){
+            this.person=person;
+            return this;
+        }
+
+        public Builder ticket(Ticket ticket){
+            this.ticket=ticket;
+            return this;
+        }
+
+        public Builder gender(String gender){
+            this.gender=gender;
+            return this;
+        }
+
+        public Reserve build(){
+            return new Reserve(person,ticket,gender);
+        }
     }
 }

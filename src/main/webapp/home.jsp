@@ -40,8 +40,8 @@
     <input required type="text" name="date">
     <input type="hidden" value="${requestScope.person.id}" name="personId">
     <input type="submit">
-
 </form>
+<a href="buy">مشاهده خرید های من</a>
 <table class="table">
     <tr>
         <th>شناسه اتوبوس</th>
@@ -58,7 +58,7 @@
             <td>${ticket.dest}</td>
             <td>${ticket.localDate}</td>
             <td>${ticket.time}</td>
-            <td><a href="buy?personId=${requestScope.person.id}&ticketId=${ticket.id}">خرید</a></td>
+            <td><a href="gender?personId=${requestScope.person.id}&ticketId=${ticket.id}">خرید</a></td>
         </tr>
     </c:forEach>
 </table>

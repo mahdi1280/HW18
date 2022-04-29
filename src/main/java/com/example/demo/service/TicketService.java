@@ -13,4 +13,8 @@ public class TicketService {
     public List<Ticket> findBySourceAndDestAndDate(String source, String dest, LocalDate date) {
         return ticketRepository.findBySourceAndDestAndDate(source,dest,date);
     }
+
+    public Ticket findById(int ticketId) {
+        return ticketRepository.findById(ticketId);
+    }
 }

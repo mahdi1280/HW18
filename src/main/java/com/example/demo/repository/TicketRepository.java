@@ -17,4 +17,9 @@ public class TicketRepository {
                 .setParameter("source",source)
                 .getResultList();
     }
+
+    public Ticket findById(int ticketId) {
+        Session session = MySessionFactory.openSession();
+        return session.find(Ticket.class,ticketId);
+    }
 }
