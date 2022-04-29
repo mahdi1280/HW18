@@ -19,4 +19,7 @@ public class PersonService {
         return personRepository.findByUsername(username);
     }
 
+    public Person findById(int personId) {
+        return personRepository.findById(personId);
+    }
 }

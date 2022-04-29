@@ -9,6 +9,7 @@ public class Ticket extends BaseEntity{
     private LocalDate localDate;
     private String source;
     private String dest;
+    private String time;
 
     public LocalDate getLocalDate() {
         return localDate;
@@ -34,6 +35,15 @@ public class Ticket extends BaseEntity{
 
     public Ticket setDest(String dest) {
         this.dest = dest;
+        return this;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public Ticket setTime(String time) {
+        this.time = time;
         return this;
     }
 }

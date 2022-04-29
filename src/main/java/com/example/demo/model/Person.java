@@ -8,6 +8,17 @@ public class Person extends BaseEntity{
     private String username;
     private String password;
 
+    public Person(){}
+
+    public Person(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public static Builder builder(){
+        return new Builder();
+    }
+
     public String getUsername() {
         return username;
     }
@@ -24,5 +35,29 @@ public class Person extends BaseEntity{
     public Person setPassword(String password) {
         this.password = password;
         return this;
+    }
+
+    public static class Builder{
+
+        private String username;
+        private String password;
+
+        private Builder(){
+
+        }
+
+        public Builder username(String username){
+            this.username=username;
+            return this;
+        }
+
+        public Builder password(String password){
+            this.password=password;
+            return this;
+        }
+
+        public Person build(){
+            return new Person(username,password);
+        }
     }
 }

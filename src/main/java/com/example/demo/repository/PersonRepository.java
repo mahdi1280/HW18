@@ -24,4 +24,9 @@ public class PersonRepository {
             return null;
         return list.get(0);
     }
+
+    public Person findById(int personId) {
+        Session session = MySessionFactory.openSession();
+        return session.find(Person.class,personId);
+    }
 }
